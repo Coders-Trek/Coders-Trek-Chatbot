@@ -1,0 +1,35 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+
+- rule: Activate form
+  steps:
+  - intent: tell_name
+  - action: utter_name
+  - action: user_details_form
+  - active_loop: user_details_form
+
+
+- rule: Submit form
+  condition:
+  - active_loop: user_details_form
+  steps:
+  - action: user_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
+  - action: action_submit
+  
+
+- rule: out-of-scope
+  steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope

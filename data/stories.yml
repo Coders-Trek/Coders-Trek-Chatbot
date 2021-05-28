@@ -1,0 +1,66 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+
+
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: coders_trek_intro
+  - action: utter_coders_trek_intro
+
+#- story: name path 
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: tell_name
+#  - action: utter_name
+#  - action: utter_ask_name
+#  - intent: asking_name
+#    entities:
+#    - name: "aman"
+#  - slot_was_set:
+#    - name: "aman"
+#  - action: utter_thanks
+
+- story: happy path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_are_you
+  - action: utter_you_are_good
+
+- story: happy play video path
+  steps:
+    - intent: how_to_start_coding
+    - action: action_video
+
+
+- story: help path 1
+  steps:
+
+    - intent: ask_help
+    - action: utter_ask_help
+#    - intent: coders_trek_intro
+#    - action: utter_coders_trek_intro
+#
+- story: help path 2
+  steps:
+
+    - intent: dashboard
+    - action: action_dashboard
+#
+#- story: help path 3
+#  steps:
+#    - intent: ask_help
+#    - action: utter_ask_help
+#    - intent: dashboard
+#    - action: action_dashboard
